@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  BeeChat
-//
-//  Created by administrator on 08/01/2022.
-//
 
 import UIKit
 
