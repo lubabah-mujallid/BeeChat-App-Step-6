@@ -55,6 +55,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginBtnPressed:" destination="YN5-1M-yFb" eventType="touchUpInside" id="A7A-p2-yxf"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VXD-Lc-gfb">
                                         <rect key="frame" x="0.0" y="187" width="269" height="46.5"/>
@@ -139,6 +142,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gPl-y2-oDZ"/>
+                    <connections>
+                        <outletCollection property="textFieldsUserInfo" destination="8FQ-Ue-5GR" collectionClass="NSMutableArray" id="qqf-KR-Pdf"/>
+                        <outletCollection property="textFieldsUserInfo" destination="8kc-s4-7Bn" collectionClass="NSMutableArray" id="r2R-y2-0UP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giN-wi-S31" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,7 +271,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aHU-aG-U2K"/>
+        <segue reference="yRg-7d-DW6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circles.hexagongrid" catalog="system" width="128" height="112"/>

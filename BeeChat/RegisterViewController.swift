@@ -6,7 +6,7 @@
 
 //store user info
 
-
+import FirebaseAuth
 import UIKit
 
 class RegisterViewController: UIViewController {
@@ -18,6 +18,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateProfilePicUI()
+        
     }
     
     @IBAction func addPicBtnPressed(_ sender: UIButton) {
@@ -27,6 +28,20 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerBtnPressed(_ sender: UIButton) {
         
+        let user = User(firstName: textFieldsProfileInfo[0].text!, lastName: textFieldsProfileInfo[1].text!, email: textFieldsProfileInfo[2].text!, password: textFieldsProfileInfo[3].text!)
+        //validate??
+        
+        // Firebase Login / check to see if email is taken
+        // try to create an account
+        Auth.auth().createUser(withEmail: user.email, password: user.password, completion: { authResult , error  in
+            guard let result = authResult, error == nil else {
+                print("Error creating user, error:\(String(describing: error)), result:\(String(describing: authResult))")
+                //make some sort of alert to user to try again
+                return
+            }
+            let user = result.user
+            print("Created User: \(user)")
+        })
     }
     
     

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,9 +15,13 @@
 		C367CA38278A1CB8002C8499 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C367CA36278A1CB8002C8499 /* LaunchScreen.storyboard */; };
 		C367CA40278A1D6D002C8499 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA3F278A1D6D002C8499 /* LoginViewController.swift */; };
 		C367CA42278A1D78002C8499 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA41278A1D78002C8499 /* RegisterViewController.swift */; };
+		C367CA44278AED8F002C8499 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C367CA43278AED8F002C8499 /* GoogleService-Info.plist */; };
+		C367CA46278AFB2B002C8499 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA45278AFB2B002C8499 /* User.swift */; };
+		F8A757901598AD81F9024451 /* Pods_BeeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E512A56908B1F1598F61FEC4 /* Pods_BeeChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9594A01EB69DB93F9BD366AB /* Pods-BeeChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeChat.debug.xcconfig"; path = "Target Support Files/Pods-BeeChat/Pods-BeeChat.debug.xcconfig"; sourceTree = "<group>"; };
 		C367CA28278A1CB5002C8499 /* BeeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C367CA2B278A1CB5002C8499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C367CA2D278A1CB5002C8499 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +32,10 @@
 		C367CA39278A1CB8002C8499 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C367CA3F278A1D6D002C8499 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C367CA41278A1D78002C8499 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C367CA43278AED8F002C8499 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C367CA45278AFB2B002C8499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E512A56908B1F1598F61FEC4 /* Pods_BeeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9F19E8BD9E2DFC9ABEA7C4 /* Pods-BeeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeChat.release.xcconfig"; path = "Target Support Files/Pods-BeeChat/Pods-BeeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A757901598AD81F9024451 /* Pods_BeeChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47D9D11BFBC5DD408C8CCBE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E512A56908B1F1598F61FEC4 /* Pods_BeeChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98CA359312599CE790570298 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9594A01EB69DB93F9BD366AB /* Pods-BeeChat.debug.xcconfig */,
+				ED9F19E8BD9E2DFC9ABEA7C4 /* Pods-BeeChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C367CA1F278A1CB5002C8499 = {
 			isa = PBXGroup;
 			children = (
 				C367CA2A278A1CB5002C8499 /* BeeChat */,
 				C367CA29278A1CB5002C8499 /* Products */,
+				98CA359312599CE790570298 /* Pods */,
+				47D9D11BFBC5DD408C8CCBE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +88,13 @@
 		C367CA2A278A1CB5002C8499 /* BeeChat */ = {
 			isa = PBXGroup;
 			children = (
+				C367CA43278AED8F002C8499 /* GoogleService-Info.plist */,
 				C367CA2B278A1CB5002C8499 /* AppDelegate.swift */,
 				C367CA2D278A1CB5002C8499 /* SceneDelegate.swift */,
 				C367CA2F278A1CB5002C8499 /* ConversationViewController.swift */,
 				C367CA3F278A1D6D002C8499 /* LoginViewController.swift */,
 				C367CA41278A1D78002C8499 /* RegisterViewController.swift */,
+				C367CA45278AFB2B002C8499 /* User.swift */,
 				C367CA31278A1CB5002C8499 /* Main.storyboard */,
 				C367CA34278A1CB8002C8499 /* Assets.xcassets */,
 				C367CA36278A1CB8002C8499 /* LaunchScreen.storyboard */,
@@ -80,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C367CA3C278A1CB8002C8499 /* Build configuration list for PBXNativeTarget "BeeChat" */;
 			buildPhases = (
+				2421B476A6E22F22A42271EA /* [CP] Check Pods Manifest.lock */,
 				C367CA24278A1CB5002C8499 /* Sources */,
 				C367CA25278A1CB5002C8499 /* Frameworks */,
 				C367CA26278A1CB5002C8499 /* Resources */,
+				FA81EB7325E649DF24676CE0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,12 +163,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				C367CA38278A1CB8002C8499 /* LaunchScreen.storyboard in Resources */,
+				C367CA44278AED8F002C8499 /* GoogleService-Info.plist in Resources */,
 				C367CA35278A1CB8002C8499 /* Assets.xcassets in Resources */,
 				C367CA33278A1CB5002C8499 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2421B476A6E22F22A42271EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BeeChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA81EB7325E649DF24676CE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeeChat/Pods-BeeChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BeeChat/Pods-BeeChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeeChat/Pods-BeeChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C367CA24278A1CB5002C8499 /* Sources */ = {
@@ -145,6 +220,7 @@
 			files = (
 				C367CA40278A1D6D002C8499 /* LoginViewController.swift in Sources */,
 				C367CA42278A1D78002C8499 /* RegisterViewController.swift in Sources */,
+				C367CA46278AFB2B002C8499 /* User.swift in Sources */,
 				C367CA30278A1CB5002C8499 /* ConversationViewController.swift in Sources */,
 				C367CA2C278A1CB5002C8499 /* AppDelegate.swift in Sources */,
 				C367CA2E278A1CB5002C8499 /* SceneDelegate.swift in Sources */,
@@ -291,6 +367,7 @@
 		};
 		C367CA3D278A1CB8002C8499 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9594A01EB69DB93F9BD366AB /* Pods-BeeChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +386,7 @@
 		};
 		C367CA3E278A1CB8002C8499 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED9F19E8BD9E2DFC9ABEA7C4 /* Pods-BeeChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
