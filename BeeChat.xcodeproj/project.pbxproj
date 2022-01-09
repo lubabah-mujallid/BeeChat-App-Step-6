@@ -17,6 +17,8 @@
 		C367CA42278A1D78002C8499 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA41278A1D78002C8499 /* RegisterViewController.swift */; };
 		C367CA44278AED8F002C8499 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C367CA43278AED8F002C8499 /* GoogleService-Info.plist */; };
 		C367CA46278AFB2B002C8499 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA45278AFB2B002C8499 /* User.swift */; };
+		C367CA48278B0545002C8499 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA47278B0545002C8499 /* MainViewController.swift */; };
+		C367CA4A278B0CD9002C8499 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA49278B0CD9002C8499 /* DatabaseManager.swift */; };
 		F8A757901598AD81F9024451 /* Pods_BeeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E512A56908B1F1598F61FEC4 /* Pods_BeeChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		C367CA41278A1D78002C8499 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C367CA43278AED8F002C8499 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C367CA45278AFB2B002C8499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C367CA47278B0545002C8499 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C367CA49278B0CD9002C8499 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		E512A56908B1F1598F61FEC4 /* Pods_BeeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9F19E8BD9E2DFC9ABEA7C4 /* Pods-BeeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeChat.release.xcconfig"; path = "Target Support Files/Pods-BeeChat/Pods-BeeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,9 +97,11 @@
 				C367CA2D278A1CB5002C8499 /* SceneDelegate.swift */,
 				C367CA2F278A1CB5002C8499 /* ConversationViewController.swift */,
 				C367CA3F278A1D6D002C8499 /* LoginViewController.swift */,
+				C367CA49278B0CD9002C8499 /* DatabaseManager.swift */,
 				C367CA41278A1D78002C8499 /* RegisterViewController.swift */,
 				C367CA45278AFB2B002C8499 /* User.swift */,
 				C367CA31278A1CB5002C8499 /* Main.storyboard */,
+				C367CA47278B0545002C8499 /* MainViewController.swift */,
 				C367CA34278A1CB8002C8499 /* Assets.xcassets */,
 				C367CA36278A1CB8002C8499 /* LaunchScreen.storyboard */,
 				C367CA39278A1CB8002C8499 /* Info.plist */,
@@ -218,6 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C367CA4A278B0CD9002C8499 /* DatabaseManager.swift in Sources */,
+				C367CA48278B0545002C8499 /* MainViewController.swift in Sources */,
 				C367CA40278A1D6D002C8499 /* LoginViewController.swift in Sources */,
 				C367CA42278A1D78002C8499 /* RegisterViewController.swift in Sources */,
 				C367CA46278AFB2B002C8499 /* User.swift in Sources */,
