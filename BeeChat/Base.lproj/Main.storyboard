@@ -152,40 +152,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circles.hexagongrid" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ixI-kl-dPq">
-                                <rect key="frame" x="87" y="105" width="240" height="140"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ixI-kl-dPq">
+                                <rect key="frame" x="136.5" y="105" width="141" height="140"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="5" scale="small" weight="thin"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4YG-di-HKc">
-                                <rect key="frame" x="72.5" y="285.5" width="269" height="313.5"/>
+                                <rect key="frame" x="72.5" y="290.5" width="269" height="314"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IQy-AY-yvb">
                                         <rect key="frame" x="0.0" y="0.0" width="269" height="48.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZY-iW-R9U">
-                                        <rect key="frame" x="0.0" y="66.5" width="269" height="48"/>
+                                        <rect key="frame" x="0.0" y="66.5" width="269" height="48.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-FF-mcG">
-                                        <rect key="frame" x="0.0" y="132.5" width="269" height="48.5"/>
+                                        <rect key="frame" x="0.0" y="133" width="269" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mqL-LY-8uW">
                                         <rect key="frame" x="0.0" y="199" width="269" height="48.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzQ-31-6ZQ">
-                                        <rect key="frame" x="0.0" y="265.5" width="269" height="48"/>
+                                        <rect key="frame" x="0.0" y="265.5" width="269" height="48.5"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerBtnPressed:" destination="tuv-c7-y0v" eventType="touchUpInside" id="yWl-BR-Cj9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -213,24 +218,45 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Adx-RR-oMa"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsN-69-LFq">
+                                <rect key="frame" x="136.5" y="250.5" width="141" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Add Profile Pic">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPicBtnPressed:" destination="tuv-c7-y0v" eventType="touchUpInside" id="m6I-cz-2rr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QCq-UU-0QF"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
+                            <constraint firstItem="FsN-69-LFq" firstAttribute="height" secondItem="ixI-kl-dPq" secondAttribute="height" multiplier="0.1" id="0qK-gx-fGe"/>
                             <constraint firstItem="ixI-kl-dPq" firstAttribute="height" secondItem="Ejr-3S-PI2" secondAttribute="height" multiplier="0.157924" id="52I-vG-R7n"/>
                             <constraint firstItem="4YG-di-HKc" firstAttribute="width" secondItem="Ejr-3S-PI2" secondAttribute="width" multiplier="0.65" id="6KW-HI-EoA"/>
-                            <constraint firstItem="ixI-kl-dPq" firstAttribute="width" secondItem="Ejr-3S-PI2" secondAttribute="width" multiplier="0.57971" id="A8j-sv-F8L"/>
+                            <constraint firstItem="ixI-kl-dPq" firstAttribute="width" secondItem="Ejr-3S-PI2" secondAttribute="width" multiplier="0.34" id="A8j-sv-F8L"/>
                             <constraint firstItem="QCq-UU-0QF" firstAttribute="bottom" secondItem="ybb-0l-zEN" secondAttribute="bottom" id="AWd-HS-2p3"/>
                             <constraint firstItem="4YG-di-HKc" firstAttribute="centerX" secondItem="QCq-UU-0QF" secondAttribute="centerX" id="Aqj-Rj-Lg2"/>
+                            <constraint firstItem="FsN-69-LFq" firstAttribute="top" secondItem="ixI-kl-dPq" secondAttribute="bottom" constant="5" id="FUu-0s-QwR"/>
                             <constraint firstItem="ixI-kl-dPq" firstAttribute="centerX" secondItem="QCq-UU-0QF" secondAttribute="centerX" id="KBI-VC-fux"/>
-                            <constraint firstItem="4YG-di-HKc" firstAttribute="top" secondItem="ixI-kl-dPq" secondAttribute="bottom" constant="40" id="KaV-k3-3KJ"/>
                             <constraint firstItem="ybb-0l-zEN" firstAttribute="centerX" secondItem="QCq-UU-0QF" secondAttribute="centerX" id="VPa-3D-Kky"/>
                             <constraint firstItem="4YG-di-HKc" firstAttribute="height" secondItem="Ejr-3S-PI2" secondAttribute="height" multiplier="0.35" id="h3h-Zz-t7X"/>
+                            <constraint firstItem="FsN-69-LFq" firstAttribute="centerX" secondItem="QCq-UU-0QF" secondAttribute="centerX" id="hx2-I4-DZh"/>
                             <constraint firstItem="ybb-0l-zEN" firstAttribute="height" secondItem="Ejr-3S-PI2" secondAttribute="height" multiplier="0.05" id="qHY-yy-CmR"/>
+                            <constraint firstItem="FsN-69-LFq" firstAttribute="width" secondItem="ixI-kl-dPq" secondAttribute="width" id="reF-MW-ImM"/>
                             <constraint firstItem="ixI-kl-dPq" firstAttribute="top" secondItem="QCq-UU-0QF" secondAttribute="top" constant="60" id="xta-WZ-Kwn"/>
+                            <constraint firstItem="4YG-di-HKc" firstAttribute="top" secondItem="FsN-69-LFq" secondAttribute="bottom" constant="26" id="y68-s6-dKd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z2n-gQ-x1v"/>
+                    <connections>
+                        <outlet property="imageViewProfilePic" destination="ixI-kl-dPq" id="qsE-DC-Zcf"/>
+                        <outletCollection property="textFieldsProfileInfo" destination="IQy-AY-yvb" collectionClass="NSMutableArray" id="7io-v6-PI9"/>
+                        <outletCollection property="textFieldsProfileInfo" destination="pZY-iW-R9U" collectionClass="NSMutableArray" id="Oft-m8-oQq"/>
+                        <outletCollection property="textFieldsProfileInfo" destination="NKI-FF-mcG" collectionClass="NSMutableArray" id="D0d-7d-IUB"/>
+                        <outletCollection property="textFieldsProfileInfo" destination="mqL-LY-8uW" collectionClass="NSMutableArray" id="HEN-PC-F8m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRw-98-lzD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,10 +264,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yRg-7d-DW6"/>
+        <segue reference="aHU-aG-U2K"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="circles.hexagongrid" catalog="system" width="128" height="112"/>
+        <image name="l.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
