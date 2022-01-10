@@ -19,6 +19,11 @@
 		C367CA46278AFB2B002C8499 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA45278AFB2B002C8499 /* User.swift */; };
 		C367CA48278B0545002C8499 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA47278B0545002C8499 /* MainViewController.swift */; };
 		C367CA4A278B0CD9002C8499 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA49278B0CD9002C8499 /* DatabaseManager.swift */; };
+		C367CA57278C9DA1002C8499 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA56278C9DA1002C8499 /* NewConversationViewController.swift */; };
+		C367CA5A278CA22C002C8499 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA59278CA22C002C8499 /* ProfileViewController.swift */; };
+		C367CA5D278CAD0C002C8499 /* ImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA5C278CAD0B002C8499 /* ImageViewExtensions.swift */; };
+		C367CA5F278CCB42002C8499 /* KeyboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA5E278CCB42002C8499 /* KeyboardExtensions.swift */; };
+		C367CA62278CD321002C8499 /* UserInfoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367CA61278CD321002C8499 /* UserInfoError.swift */; };
 		F8A757901598AD81F9024451 /* Pods_BeeChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E512A56908B1F1598F61FEC4 /* Pods_BeeChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +43,11 @@
 		C367CA45278AFB2B002C8499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C367CA47278B0545002C8499 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C367CA49278B0CD9002C8499 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		C367CA56278C9DA1002C8499 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
+		C367CA59278CA22C002C8499 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C367CA5C278CAD0B002C8499 /* ImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtensions.swift; sourceTree = "<group>"; };
+		C367CA5E278CCB42002C8499 /* KeyboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtensions.swift; sourceTree = "<group>"; };
+		C367CA61278CD321002C8499 /* UserInfoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoError.swift; sourceTree = "<group>"; };
 		E512A56908B1F1598F61FEC4 /* Pods_BeeChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeeChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9F19E8BD9E2DFC9ABEA7C4 /* Pods-BeeChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeChat.release.xcconfig"; path = "Target Support Files/Pods-BeeChat/Pods-BeeChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,21 +102,74 @@
 		C367CA2A278A1CB5002C8499 /* BeeChat */ = {
 			isa = PBXGroup;
 			children = (
+				C367CA55278C9BA5002C8499 /* Models */,
+				C367CA54278C9B7C002C8499 /* Views */,
+				C367CA53278C9B1F002C8499 /* Controllers */,
+				C367CA52278C9AD8002C8499 /* Resources */,
 				C367CA43278AED8F002C8499 /* GoogleService-Info.plist */,
-				C367CA2B278A1CB5002C8499 /* AppDelegate.swift */,
-				C367CA2D278A1CB5002C8499 /* SceneDelegate.swift */,
-				C367CA2F278A1CB5002C8499 /* ConversationViewController.swift */,
-				C367CA3F278A1D6D002C8499 /* LoginViewController.swift */,
-				C367CA49278B0CD9002C8499 /* DatabaseManager.swift */,
-				C367CA41278A1D78002C8499 /* RegisterViewController.swift */,
-				C367CA45278AFB2B002C8499 /* User.swift */,
-				C367CA31278A1CB5002C8499 /* Main.storyboard */,
-				C367CA47278B0545002C8499 /* MainViewController.swift */,
-				C367CA34278A1CB8002C8499 /* Assets.xcassets */,
-				C367CA36278A1CB8002C8499 /* LaunchScreen.storyboard */,
 				C367CA39278A1CB8002C8499 /* Info.plist */,
 			);
 			path = BeeChat;
+			sourceTree = "<group>";
+		};
+		C367CA52278C9AD8002C8499 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C367CA49278B0CD9002C8499 /* DatabaseManager.swift */,
+				C367CA60278CD2F1002C8499 /* Alerts */,
+				C367CA5B278CACEA002C8499 /* Extensions */,
+				C367CA2B278A1CB5002C8499 /* AppDelegate.swift */,
+				C367CA2D278A1CB5002C8499 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C367CA53278C9B1F002C8499 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C367CA2F278A1CB5002C8499 /* ConversationViewController.swift */,
+				C367CA3F278A1D6D002C8499 /* LoginViewController.swift */,
+				C367CA41278A1D78002C8499 /* RegisterViewController.swift */,
+				C367CA47278B0545002C8499 /* MainViewController.swift */,
+				C367CA56278C9DA1002C8499 /* NewConversationViewController.swift */,
+				C367CA59278CA22C002C8499 /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C367CA54278C9B7C002C8499 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C367CA31278A1CB5002C8499 /* Main.storyboard */,
+				C367CA34278A1CB8002C8499 /* Assets.xcassets */,
+				C367CA36278A1CB8002C8499 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C367CA55278C9BA5002C8499 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C367CA45278AFB2B002C8499 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C367CA5B278CACEA002C8499 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C367CA5C278CAD0B002C8499 /* ImageViewExtensions.swift */,
+				C367CA5E278CCB42002C8499 /* KeyboardExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C367CA60278CD2F1002C8499 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				C367CA61278CD321002C8499 /* UserInfoError.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,11 +288,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C367CA4A278B0CD9002C8499 /* DatabaseManager.swift in Sources */,
+				C367CA5D278CAD0C002C8499 /* ImageViewExtensions.swift in Sources */,
 				C367CA48278B0545002C8499 /* MainViewController.swift in Sources */,
+				C367CA5A278CA22C002C8499 /* ProfileViewController.swift in Sources */,
+				C367CA5F278CCB42002C8499 /* KeyboardExtensions.swift in Sources */,
 				C367CA40278A1D6D002C8499 /* LoginViewController.swift in Sources */,
 				C367CA42278A1D78002C8499 /* RegisterViewController.swift in Sources */,
+				C367CA62278CD321002C8499 /* UserInfoError.swift in Sources */,
 				C367CA46278AFB2B002C8499 /* User.swift in Sources */,
 				C367CA30278A1CB5002C8499 /* ConversationViewController.swift in Sources */,
+				C367CA57278C9DA1002C8499 /* NewConversationViewController.swift in Sources */,
 				C367CA2C278A1CB5002C8499 /* AppDelegate.swift in Sources */,
 				C367CA2E278A1CB5002C8499 /* SceneDelegate.swift in Sources */,
 			);

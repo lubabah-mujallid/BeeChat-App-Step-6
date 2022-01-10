@@ -1,9 +1,6 @@
 
 
-// take photo from camera not working
-// keyboard pod
-//set textfield text types and keyboard types and return btn
-
+//register btn needs to go somewhere correctly 
 //store user info
 
 import FirebaseAuth
@@ -18,7 +15,11 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateProfilePicUI()
-        
+        textFieldsProfileInfo[0].delegate = self
+        textFieldsProfileInfo[1].delegate = self
+        textFieldsProfileInfo[2].delegate = self
+        textFieldsProfileInfo[3].delegate = self
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func addPicBtnPressed(_ sender: UIButton) {
@@ -26,25 +27,43 @@ class RegisterViewController: UIViewController {
         
     }
     
-    @IBAction func registerBtnPressed(_ sender: UIButton) {
+    @IBAction func registerBtnPressed(_ sender: Any) {
         
-        let user = User(firstName: textFieldsProfileInfo[0].text!, lastName: textFieldsProfileInfo[1].text!, email: textFieldsProfileInfo[2].text!, password: textFieldsProfileInfo[3].text!)
-        //validate??
+        guard let fname = textFieldsProfileInfo[0].text,
+              let lname = textFieldsProfileInfo[1].text,
+              let email = textFieldsProfileInfo[2].text,
+              let password = textFieldsProfileInfo[3].text,
+              !fname.isEmpty, !lname.isEmpty
+        else {
+            print("fname or lname is empty")
+            UserInfoError.alert(error: "First or Last name is empty", view: self)
+            return
+        }
         
-        // Firebase Login / check to see if email is taken
-        // try to create an account
-        Auth.auth().createUser(withEmail: user.email, password: user.password, completion: { authResult , error  in
-            guard let result = authResult, error == nil else {
-                print("Error creating user, error:\(String(describing: error)), result:\(String(describing: authResult))")
-                //make some sort of alert to user to try again
+        DatabaseManger.shared.userExists(with: email, completion: {
+            [weak self] exists in
+            guard let strongSelf = self else {
                 return
             }
-            let user = result.user
-            print("Created User: \(user)")
+            guard !exists else {
+                UserInfoError.alert(error: "User already exists", view: strongSelf)
+                return
+            }
+            Auth.auth().createUser(withEmail: email, password: password, completion: {
+                authResult , error  in
+                
+                guard authResult != nil, error == nil else {
+                    print("Error creating user, error:\(String(describing: error)), result:\(String(describing: authResult))")
+                    UserInfoError.alert(error: error!.localizedDescription, view: strongSelf)
+                    return
+                }
+                let user = AppUser(firstName: fname, lastName: lname, emailAddress: email)
+                DatabaseManger.shared.insertUser(with: user)
+                print("Created User: \(user)")
+                strongSelf.dismiss(animated: true, completion: nil)
+            })
         })
     }
-    
-    
 }
 
 //this extension deals with the profile pic
@@ -102,16 +121,19 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
     
 }
 
-//this extension is to make the profile pic circular
-extension UIImageView {
-    public func maskCircle(with image: UIImage) {
-        self.contentMode = UIView.ContentMode.scaleAspectFill
-        self.layer.cornerRadius = self.frame.height / 2
-        self.layer.masksToBounds = false
-        self.clipsToBounds = true
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.borderWidth = 5.0
-        self.image = image
+//this extensions is for the text fields return btns
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+            case textFieldsProfileInfo[0]:
+                textFieldsProfileInfo[1].becomeFirstResponder()
+            case textFieldsProfileInfo[1]:
+                textFieldsProfileInfo[2].becomeFirstResponder()
+            case textFieldsProfileInfo[2]:
+                textFieldsProfileInfo[3].becomeFirstResponder()
+            default:
+                registerBtnPressed(textField)
+        }
+        return true
     }
 }
-
