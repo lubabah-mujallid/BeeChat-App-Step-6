@@ -33,12 +33,7 @@ class MainViewController: UIViewController {
         }
         else {
             print("logged in!! -> move to conversations vc")
-            // present conversation view controller
-            if let newModal = self.storyboard?.instantiateViewController(withIdentifier: "conversation") {
-                newModal.modalTransitionStyle = .crossDissolve
-                newModal.modalPresentationStyle = .fullScreen
-                present(newModal, animated: true, completion: nil)
-              }
+            performSegue(withIdentifier: "tabBarSegue", sender: self)
         }
     }
     

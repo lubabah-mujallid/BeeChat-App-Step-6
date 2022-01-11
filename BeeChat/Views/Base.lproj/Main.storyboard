@@ -18,25 +18,97 @@
                         <viewLayoutGuide key="safeArea" id="0Oq-ds-CuX"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
+                    <connections>
+                        <segue destination="l3h-ml-h1H" kind="show" identifier="tabBarSegue" id="Lg9-JS-9tv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g41-UH-lF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-677" y="76"/>
+            <point key="canvasLocation" x="-1757" y="76"/>
         </scene>
-        <!--Conversation View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="EYs-2W-j4V">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBar" modalPresentationStyle="fullScreen" id="l3h-ml-h1H" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Pm8-tC-gCW"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ULk-oU-bhg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemTealColor"/>
+                        <color key="selectedImageTintColor" systemColor="systemTealColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="1kg-dj-5lZ"/>
+                        <segue destination="r0j-cd-1Is" kind="relationship" relationship="viewControllers" id="uhy-Oc-3tS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfY-4X-WRu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="-632"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Ffh-30-qae">
+            <objects>
+                <viewController id="r0j-cd-1Is" customClass="ProfileViewController" customModule="BeeChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d2Q-Fe-5Zz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="o5D-LC-NUt">
+                                <rect key="frame" x="136.5" y="61" width="141" height="133"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="5" scale="small" weight="thin"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-Zk-Xin">
+                                <rect key="frame" x="132" y="676" width="150" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutBtnPressed:" destination="r0j-cd-1Is" eventType="touchUpInside" id="YxD-xj-Qu8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PYG-zq-Bc1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o5D-LC-NUt" firstAttribute="height" secondItem="d2Q-Fe-5Zz" secondAttribute="height" multiplier="0.16" id="Bb9-Ng-aMf"/>
+                            <constraint firstItem="PYG-zq-Bc1" firstAttribute="bottom" secondItem="sNv-Zk-Xin" secondAttribute="bottom" constant="39" id="G6k-sr-Ro0"/>
+                            <constraint firstItem="sNv-Zk-Xin" firstAttribute="centerX" secondItem="PYG-zq-Bc1" secondAttribute="centerX" id="Nmw-X2-4Bv"/>
+                            <constraint firstItem="sNv-Zk-Xin" firstAttribute="height" secondItem="d2Q-Fe-5Zz" secondAttribute="height" multiplier="0.0522565" id="T7U-sZ-2H8"/>
+                            <constraint firstItem="o5D-LC-NUt" firstAttribute="width" secondItem="d2Q-Fe-5Zz" secondAttribute="width" multiplier="0.34058" id="WIo-Rs-p6T"/>
+                            <constraint firstItem="o5D-LC-NUt" firstAttribute="top" secondItem="PYG-zq-Bc1" secondAttribute="top" constant="60" id="gHo-vw-45a"/>
+                            <constraint firstItem="sNv-Zk-Xin" firstAttribute="width" secondItem="d2Q-Fe-5Zz" secondAttribute="width" multiplier="0.362319" id="q5l-KC-VNb"/>
+                            <constraint firstItem="o5D-LC-NUt" firstAttribute="centerX" secondItem="PYG-zq-Bc1" secondAttribute="centerX" id="qxN-AK-870"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="kyQ-m6-twG"/>
+                    <connections>
+                        <outlet property="imageViewProfilePic" destination="o5D-LC-NUt" id="IEr-wB-BmY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GTc-LY-GbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-768.11594202898561" y="75.669642857142847"/>
+        </scene>
+        <!--Chat-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="conversation" id="BYZ-38-t0r" customClass="ConversationViewController" customModule="BeeChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Chat" image="text.bubble.fill" catalog="system" id="eMe-Hj-fcQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="77"/>
+            <point key="canvasLocation" x="-32" y="76"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="yXZ-g7-FOr">
@@ -97,7 +169,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbx-CF-9xI">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbx-CF-9xI" customClass="FBSDKLoginButton">
                                         <rect key="frame" x="0.0" y="249.5" width="269" height="46.5"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -105,14 +177,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxF-RI-1NE">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ke-6c-gwY">
                                         <rect key="frame" x="0.0" y="312" width="269" height="46.5"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <state key="normal" title="Face">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ELU-cY-dDX">
@@ -158,6 +226,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gPl-y2-oDZ"/>
                     <connections>
+                        <outlet property="btnFaceBook" destination="pbx-CF-9xI" id="BmE-Am-gHb"/>
                         <outletCollection property="textFieldsUserInfo" destination="8FQ-Ue-5GR" collectionClass="NSMutableArray" id="qqf-KR-Pdf"/>
                         <outletCollection property="textFieldsUserInfo" destination="8kc-s4-7Bn" collectionClass="NSMutableArray" id="r2R-y2-0UP"/>
                     </connections>
@@ -291,11 +360,16 @@
     <resources>
         <image name="circles.hexagongrid" catalog="system" width="128" height="112"/>
         <image name="l.square" catalog="system" width="128" height="114"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

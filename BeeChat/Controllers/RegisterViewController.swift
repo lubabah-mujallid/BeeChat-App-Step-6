@@ -1,6 +1,5 @@
 
 
-//register btn needs to go somewhere correctly 
 //store user info
 
 import FirebaseAuth
@@ -60,7 +59,11 @@ class RegisterViewController: UIViewController {
                 let user = AppUser(firstName: fname, lastName: lname, emailAddress: email)
                 DatabaseManger.shared.insertUser(with: user)
                 print("Created User: \(user)")
-                strongSelf.dismiss(animated: true, completion: nil)
+                if let newModal = strongSelf.storyboard?.instantiateViewController(withIdentifier: "tabBar") {
+                    newModal.modalTransitionStyle = .crossDissolve
+                    newModal.modalPresentationStyle = .fullScreen
+                    strongSelf.present(newModal, animated: true, completion: nil)
+                }
             })
         })
     }

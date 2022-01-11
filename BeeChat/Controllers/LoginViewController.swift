@@ -1,14 +1,14 @@
 
 //clean up loginbtnpressed more
-//register btn needs to go somewhere correctly
 
-
+import  FBSDKLoginKit
 import FirebaseAuth
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet var textFieldsUserInfo: [UITextField]!
+    @IBOutlet weak var btnFaceBook: FBLoginButton!
     
     
     override func viewDidLoad() {
@@ -16,11 +16,14 @@ class LoginViewController: UIViewController {
         print("LVC: ----------------------------")
         textFieldsUserInfo[0].delegate = self
         textFieldsUserInfo[1].delegate = self
+        btnFaceBook.delegate = self
         self.hideKeyboardWhenTappedAround()
+        btnFaceBook.permissions = ["public_profile", "email"]
     }
     
+    
     @IBAction func loginBtnPressed(_ sender: Any) {
-
+        
         // Firebase Login
         Auth.auth().signIn(withEmail: textFieldsUserInfo[0].text!, password: textFieldsUserInfo[1].text!, completion: {
             [weak self] authResult, error in
@@ -35,7 +38,12 @@ class LoginViewController: UIViewController {
             let user = result.user
             print("logged in user: \(user)")
             // if this succeeds, dismiss
-            strongSelf.dismiss(animated: true, completion: nil)
+            if let newModal = strongSelf.storyboard?.instantiateViewController(withIdentifier: "tabBar") {
+                newModal.modalTransitionStyle = .crossDissolve
+                newModal.modalPresentationStyle = .fullScreen
+                strongSelf.present(newModal, animated: true, completion: nil)
+            }
+            
         })
     }
     
@@ -53,4 +61,34 @@ extension LoginViewController: UITextFieldDelegate {
         }
         return true
     }
+}
+
+extension LoginViewController: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        guard let token = result?.token?.tokenString else {
+            print("user failed to log with facebook")
+            return
+        }
+        let credential = FacebookAuthProvider.credential(withAccessToken: token)
+        Auth.auth().signIn(with: credential, completion: {
+            [weak self] authResult, error in
+            guard let strongSelf = self else { return }
+            guard authResult != nil, error == nil else {
+                print("face credential login failed, MFA needed, error: \(error)")
+                return
+            }
+            print("succesfully logged user in with facebook")
+            if let newModal = strongSelf.storyboard?.instantiateViewController(withIdentifier: "tabBar") {
+                newModal.modalTransitionStyle = .crossDissolve
+                newModal.modalPresentationStyle = .fullScreen
+                strongSelf.present(newModal, animated: true, completion: nil)
+            }
+        })
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        // no operation
+    }
+    
+    
 }
